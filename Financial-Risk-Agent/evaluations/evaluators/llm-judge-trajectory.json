@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "id": "LLMJudgeTrajectoryEvaluator",
+  "evaluatorTypeId": "uipath-llm-judge-trajectory-similarity",
+  "evaluatorConfig": {
+    "name": "LLMJudgeTrajectoryEvaluator",
+    "model": "gpt-4o-mini-2024-07-18",
+    "defaultEvaluationCriteria": {
+      "expectedAgentBehavior": "Agent should perform a multi-step risk assessment including registry, financial, director, litigation, and news analysis, and return a risk score and category."
+    }
+  }
+}

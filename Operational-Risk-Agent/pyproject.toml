@@ -1,0 +1,24 @@
+[project]
+name = "OperationalRiskAgent1"
+version = "0.0.6"
+description = "OperationalRiskAgent"
+authors = [
+    { name = "Astitva", email = "Astitva.Singh@adrosonic.com" }
+]
+
+dependencies = [
+    "uipath-langchain[bedrock,vertex]>=0.10.0,<0.11.0",
+
+    "pydantic>=2.0.0",
+    "langgraph>=0.2.0",
+    "langchain-core>=0.3.0",
+
+    "requests>=2.32.0",
+    "feedparser>=6.0.11",
+    "vaderSentiment>=3.3.2",
+    "python-dotenv>=1.0.1",
+
+    "searoute>=1.4.3"
+]
+
+requires-python = ">=3.11"

@@ -1,0 +1,6 @@
+{
+  "ProjectType": "Agent",
+  "Name": "OperationalRiskAgent",
+  "Description": "OperationalRiskAgent",
+  "MainFile": null
+}

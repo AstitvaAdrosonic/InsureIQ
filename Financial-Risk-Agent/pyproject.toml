@@ -1,0 +1,21 @@
+[project]
+name = "financial-risk-agent3"
+version = "0.1.2"
+description = "Financial Risk Assessment Agent using LangGraph"
+authors = [{ name = "Gemini CLI" }]
+dependencies = [
+    "uipath",
+    "uipath-langchain",
+    "langgraph>=0.2.0",
+    "pydantic>=2.0.0",
+    "yfinance",
+    "feedparser",
+    "vaderSentiment",
+    "requests"
+]
+requires-python = ">=3.11"
+
+[dependency-groups]
+dev = [
+    "uipath-dev",
+]

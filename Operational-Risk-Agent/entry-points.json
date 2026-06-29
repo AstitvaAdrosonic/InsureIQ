@@ -1,0 +1,197 @@
+{
+    "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+    "$id": "entry-points.json",
+    "entryPoints": [
+        {
+            "filePath": "agent",
+            "uniqueId": "4b89b9f4-0288-4824-8b82-141c61697d26",
+            "type": "agent",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "vessel_name": {
+                        "description": "Name of vessel",
+                        "title": "Vessel Name",
+                        "type": "string"
+                    },
+                    "origin_port": {
+                        "description": "Origin port",
+                        "title": "Origin Port",
+                        "type": "string"
+                    },
+                    "destination_port": {
+                        "description": "Destination port",
+                        "title": "Destination Port",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "vessel_name",
+                    "origin_port",
+                    "destination_port"
+                ]
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "vessel_name": {
+                        "title": "Vessel Name",
+                        "type": "string"
+                    },
+                    "risk_score": {
+                        "title": "Risk Score",
+                        "type": "integer"
+                    },
+                    "risk_category": {
+                        "title": "Risk Category",
+                        "type": "string"
+                    },
+                    "route_risk": {
+                        "title": "Route Risk",
+                        "type": "integer"
+                    },
+                    "weather_risk": {
+                        "title": "Weather Risk",
+                        "type": "integer"
+                    },
+                    "news_risk": {
+                        "title": "News Risk",
+                        "type": "integer"
+                    },
+                    "sentiment_risk": {
+                        "title": "Sentiment Risk",
+                        "type": "integer"
+                    },
+                    "conflict_risk": {
+                        "title": "Conflict Risk",
+                        "type": "integer"
+                    },
+                    "summary": {
+                        "title": "Summary",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "vessel_name",
+                    "risk_score",
+                    "risk_category",
+                    "route_risk",
+                    "weather_risk",
+                    "news_risk",
+                    "sentiment_risk",
+                    "conflict_risk",
+                    "summary"
+                ]
+            },
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "__start__",
+                        "name": "__start__",
+                        "type": "__start__",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "route_analysis",
+                        "name": "route_analysis",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "weather_analysis",
+                        "name": "weather_analysis",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "news_analysis",
+                        "name": "news_analysis",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "sentiment_analysis",
+                        "name": "sentiment_analysis",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "conflict_analysis",
+                        "name": "conflict_analysis",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "risk_scoring",
+                        "name": "risk_scoring",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "generate_report",
+                        "name": "generate_report",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "__end__",
+                        "name": "__end__",
+                        "type": "__end__",
+                        "subgraph": null,
+                        "metadata": {}
+                    }
+                ],
+                "edges": [
+                    {
+                        "source": "__start__",
+                        "target": "route_analysis",
+                        "label": null
+                    },
+                    {
+                        "source": "conflict_analysis",
+                        "target": "risk_scoring",
+                        "label": null
+                    },
+                    {
+                        "source": "news_analysis",
+                        "target": "sentiment_analysis",
+                        "label": null
+                    },
+                    {
+                        "source": "risk_scoring",
+                        "target": "generate_report",
+                        "label": null
+                    },
+                    {
+                        "source": "route_analysis",
+                        "target": "weather_analysis",
+                        "label": null
+                    },
+                    {
+                        "source": "sentiment_analysis",
+                        "target": "conflict_analysis",
+                        "label": null
+                    },
+                    {
+                        "source": "weather_analysis",
+                        "target": "news_analysis",
+                        "label": null
+                    },
+                    {
+                        "source": "generate_report",
+                        "target": "__end__",
+                        "label": null
+                    }
+                ]
+            }
+        }
+    ]
+}

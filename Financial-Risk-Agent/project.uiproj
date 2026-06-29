@@ -1,0 +1,6 @@
+{
+  "ProjectType": "Agent",
+  "Name": "financial-risk-agent",
+  "Description": "Financial Risk Assessment Agent using LangGraph",
+  "MainFile": null
+}

@@ -1,0 +1,166 @@
+{
+    "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+    "$id": "entry-points.json",
+    "entryPoints": [
+        {
+            "filePath": "agent",
+            "uniqueId": "c2e75ca5-8930-4f05-b954-6bf107560560",
+            "type": "agent",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "company_name": {
+                        "description": "The name of the company to assess",
+                        "title": "Company Name",
+                        "type": "string"
+                    },
+                    "country": {
+                        "description": "The country where the company is registered",
+                        "title": "Country",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "company_name",
+                    "country"
+                ]
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "company_name": {
+                        "title": "Company Name",
+                        "type": "string"
+                    },
+                    "risk_score": {
+                        "title": "Risk Score",
+                        "type": "integer"
+                    },
+                    "risk_category": {
+                        "title": "Risk Category",
+                        "type": "string"
+                    },
+                    "summary": {
+                        "title": "Summary",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "company_name",
+                    "risk_score",
+                    "risk_category",
+                    "summary"
+                ]
+            },
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "__start__",
+                        "name": "__start__",
+                        "type": "__start__",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "company_registry_analysis",
+                        "name": "company_registry_analysis",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "financial_analysis",
+                        "name": "financial_analysis",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "director_analysis",
+                        "name": "director_analysis",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "litigation_analysis",
+                        "name": "litigation_analysis",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "news_analysis",
+                        "name": "news_analysis",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "risk_scoring",
+                        "name": "risk_scoring",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "final_output",
+                        "name": "final_output",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "__end__",
+                        "name": "__end__",
+                        "type": "__end__",
+                        "subgraph": null,
+                        "metadata": {}
+                    }
+                ],
+                "edges": [
+                    {
+                        "source": "__start__",
+                        "target": "company_registry_analysis",
+                        "label": null
+                    },
+                    {
+                        "source": "company_registry_analysis",
+                        "target": "financial_analysis",
+                        "label": null
+                    },
+                    {
+                        "source": "director_analysis",
+                        "target": "litigation_analysis",
+                        "label": null
+                    },
+                    {
+                        "source": "financial_analysis",
+                        "target": "director_analysis",
+                        "label": null
+                    },
+                    {
+                        "source": "litigation_analysis",
+                        "target": "news_analysis",
+                        "label": null
+                    },
+                    {
+                        "source": "news_analysis",
+                        "target": "risk_scoring",
+                        "label": null
+                    },
+                    {
+                        "source": "risk_scoring",
+                        "target": "final_output",
+                        "label": null
+                    },
+                    {
+                        "source": "final_output",
+                        "target": "__end__",
+                        "label": null
+                    }
+                ]
+            }
+        }
+    ]
+}

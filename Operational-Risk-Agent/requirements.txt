@@ -1,0 +1,10 @@
+pydantic
+langgraph
+langchain-core
+uipath-langchain
+feedparser
+requests
+vaderSentiment
+python-dotenv
+searoute
+
